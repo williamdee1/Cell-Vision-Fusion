@@ -2,6 +2,7 @@
 ## A Computer Vision-based Approach to Predict Kinase Inhibitor Mechanism of Action from Cell Painting Data
 
 <p align="center">
+<img src="https://github.com/williamdee1/Cell-Vision-Fusion/blob/main/media/fusion_overview.PNG" width=75% height=75% class="center">
 <img src="https://github.com/williamdee1/Cell-Vision-Fusion/blob/main/media/comp_class_pred.PNG" width=75% height=75% class="center">
 </p>
   
