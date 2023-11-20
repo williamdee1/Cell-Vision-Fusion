@@ -16,11 +16,9 @@ biorxiv pre-print: To complete
 | :--- | :----------
 | [JUMP Cell Painting Datasets](https://github.com/jump-cellpainting/datasets) |  JUMP GitHub Repository
 | [Broad Cell Painting Galley s3 Bucket](https://s3.console.aws.amazon.com/s3/buckets/cellpainting-gallery?region=us-east-1&tab=objects#) |  Storage for Cell Painting data
-| [cpg0016 Paper](https://www.biorxiv.org/content/10.1101/2023.03.23.534023v2) |  JUMP Cell Painting dataset: morphological impact of 136,000 chemical and genetic perturbations paper (biorxiv)
-| [StyleGAN2-ADA Pytorch](https://github.com/NVlabs/stylegan2-ada-pytorch) | StyleGAN2-ADA Github Repository
-| &ensp;&ensp;&boxvr;&nbsp; [styleGAN2-ada.pdf](https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/ada-paper.pdf) | StyleGAN2-ADA Research Paper
+| [cpg0016 Paper](https://www.biorxiv.org/content/10.1101/2023.03.23.534023v2) |  Morphological impact of 136,000 chemical and genetic perturbations
 
-The dataset entitled “Tharun and Thompson” (T&T) was sourced from the reference paper by Böhland, M. et al. (2021) and was requested by emailing secretariat.patho@uksh.de. 
+
 
 ## Requirements
 * 1&ndash;2 GPUs with at least 12 GB of memory.
