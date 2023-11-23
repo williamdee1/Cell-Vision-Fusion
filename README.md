@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/williamdee1/Cell-Vision-Fusion/blob/main/media/banner.PNG" width=75% height=75% class="center">
+<img src="https://github.com/williamdee1/Cell-Vision-Fusion/blob/main/media/banner.PNG" width=100% height=100% class="center">
 </p>
 # Cell-Vision Fusion
 ## A Computer Vision-based Approach to Predict Kinase Inhibitor Mechanism of Action from Cell Painting Data
