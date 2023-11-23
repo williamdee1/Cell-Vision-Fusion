@@ -17,9 +17,9 @@ biorxiv pre-print: To complete
 
 | Path | Description
 | :--- | :----------
-| [JUMP Cell Painting Datasets](https://github.com/jump-cellpainting/datasets) |  JUMP GitHub Repository
-| [Broad Cell Painting Galley s3 Bucket](https://s3.console.aws.amazon.com/s3/buckets/cellpainting-gallery?region=us-east-1&tab=objects#) |  Storage for Cell Painting data
-| [cpg0016 Paper](https://www.biorxiv.org/content/10.1101/2023.03.23.534023v2) |  Morphological impact of 136,000 chemical and genetic perturbations
+| [JUMP Cell Painting Repository](https://github.com/jump-cellpainting/datasets) |  JUMP Consortium GitHub Repository
+| [Broad Cell Painting Galley s3 Bucket](https://s3.console.aws.amazon.com/s3/buckets/cellpainting-gallery?region=us-east-1&tab=objects#) |  AWS S3 Storage bucket for Cell Painting data
+| [JUMP Cpg0016 Paper](https://www.biorxiv.org/content/10.1101/2023.03.23.534023v2) |  Morphological impact of 136,000 chemical and genetic perturbations paper - Chandrasekaran et al.
 
 
 
