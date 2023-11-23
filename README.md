@@ -60,9 +60,12 @@ python cp_main.py --data=data/all_cpnd_pert.csv --out_path=data/ibp/all_cpnd_ibp
 5. Following the download, quality control was performed to exclude images with high/low saturation, low focus and high levels of blur. This highlighted a number of images with artefacts that were present prior to quality control (see image below). This QC process is documented in [Quality Control and Dataset Selection](./notebooks/3a_Quality_Control_and_Dataset_Selection.ipynb). Post-QC the remaining datapoints were selected to form the kinase inhibitor dataset, choosing a maximum of ten, minimum of four replicates per compound.
 
 <p align="center">
-<img src="https://github.com/williamdee1/Cell-Vision-Fusion/blob/main/media/low_qual.PNG" width=75% height=75% class="center">
+<img src="https://github.com/williamdee1/Cell-Vision-Fusion/blob/main/media/low_qual.PNG" width=50% height=50% class="center">
+</p>
+<p align="left">
 <em>Example low quality image excluded by quality control procedures (source_9, 20211102-Run15, GR00004394, U24, field2</em>
 </p>
+
 
 ### Download Raw Image Cell Painting data:
 
