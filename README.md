@@ -62,8 +62,8 @@ python cp_main.py --data=data/all_cpnd_pert.csv --out_path=data/ibp/all_cpnd_ibp
 <p align="center">
 <img src="https://github.com/williamdee1/Cell-Vision-Fusion/blob/main/media/low_qual.PNG" width=50% height=50% class="center">
 </p>
-<p align="left">
-<em>Example low quality image excluded by quality control procedures (source_9, 20211102-Run15, GR00004394, U24, field2</em>
+<p align="center">
+<em>Example low quality image excluded by quality control procedures (source_9, 20211102-Run15, GR00004394, U24, field 2)</em>
 </p>
 
 
