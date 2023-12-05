@@ -97,9 +97,9 @@ Modelling was then performed in the [IBP RF SVM XGBoost](./notebooks/5b_IBP_RF_S
 #### Image Model Training Time
 
 
-| Labels      | Resolution | GPUs | sec/kimg | GPU mem | CPU mem
+| Labels      | Resolution | GPUs | sec/kimg | Max RSS | Max PSS
 | :---------: | :--------: | :--: | :------: | :-----: | :-----:
-| SwinV2      | 896x896    | 2    | ~78.6    | 8.0 GB  | 5.6 GB
+| SwinV2      | 896x896    | 2    | ~63.2    | 59.1 GB | 9.6 GB
 | ENet        | 240x240    | 1    | ~8.0     | 8.0 GB  | 5.6 GB
 
 
