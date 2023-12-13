@@ -1,0 +1,6 @@
+Accuracy: 52.21%
+F1 Score: 56.65%
+Precision: 64.68%
+Recall: 58.33%
+ROC AUC: 86.80%
+AUPR: 67.75%
