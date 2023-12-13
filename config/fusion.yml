@@ -1,0 +1,53 @@
+data_loc: data/ibp/ki_ibp.csv 
+cv_loc: data/cv_splits/ 
+norm_loc: data/norm/FULL_plt_mean_std.json 
+img_loc: ../../../DERI-DEE-JumpCP/KI_MOA/ # Replace with the appropriate path
+fs_loc: data/shap_fs_res.csv
+run_id: fusion_model_BRParams # Replace with a unique run ID
+cv_fold: 1
+cv_folds: 5 
+n_features: 150
+n_classes: 10
+mdl_weights_loc: null  # Replace if loading saved model weights
+model_type: fusion
+batch_size: 8 # Replace with the desired batch size
+n_epochs: 100  # Replace with the desired number of epochs
+lr: 5.0e-6
+drop_out: 0.1
+sched_type: cosine
+t_initial: 10
+cycle_mul: 1.5
+cycle_limit: 10
+min_lr: 5.0e-10
+warmup_epochs: 20
+warmup_steps: -1
+warmup_lr: 5.0e-10
+workers: 8
+lrd_epc: 30
+lrd_fac: 0.8
+lr_pat: 10
+opt_wd: 1.0e-2
+seed: 42
+window_size: 14
+swin_embed: 96
+swin_depths: [2, 2, 6, 2]
+swin_heads: [3, 6, 12, 24]
+n_neurons: 2048
+tab_drop_out: 0.2
+mlp_hidden: 512
+mlp_output: 32
+str_drop_out: 0.5
+crop_size: 896
+resize: 896
+ctrl_type: POSCON
+std_type: med_mad
+stnd: True
+norm: True
+tab_norm: mads_shap
+clip: False
+aug: True
+aug_type: channel
+full_train: True
+p_ch_aug: 0.4
+dist_type: dp
+out_dir: logs/ # Replace with the appropriate path
