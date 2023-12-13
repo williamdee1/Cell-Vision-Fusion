@@ -12,15 +12,13 @@ bioRxiv pre-print: To complete
 </p>
   
 
-
 ## Primary Reference Material and Data Sources
 
 | Path | Description
 | :--- | :----------
 | [JUMP Cell Painting Repository](https://github.com/jump-cellpainting/datasets) |  JUMP Consortium GitHub Repository
 | [Broad Cell Painting Galley s3 Bucket](https://s3.console.aws.amazon.com/s3/buckets/cellpainting-gallery?region=us-east-1&tab=objects#) |  AWS S3 Storage bucket for Cell Painting data
-| [JUMP Cpg0016 Paper](https://www.biorxiv.org/content/10.1101/2023.03.23.534023v2) |  Morphological impact of 136,000 chemical and genetic perturbations paper - Chandrasekaran et al.
-
+| [JUMP Cpg0016 Paper](https://www.biorxiv.org/content/10.1101/2023.03.23.534023v2) |  Morphological impact of 136,000 chemical and genetic perturbations paper - Chandrasekaran et al. (2023)
 
 
 ## Requirements
@@ -47,52 +45,78 @@ Set up AWS CLI - https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-confi
 See below for the steps required to recreate the kinase inhibitor dataset used in this work:
 
 1. The JUMP cpg0016 metadata files were downloaded from the [JUMP Cell Painting Repository Metadata](https://github.com/jump-cellpainting/datasets/tree/main/metadata) folder. These were combined in the [Combining JUMP Metadata](./notebooks/1_Combining_JUMP_Metadata.ipynb) notebook.
-2. Compound mechanism of action (MOA) information was downloaded from the [ChEMBL Drug mechanisms data portal](https://www.ebi.ac.uk/chembl/g/#browse/mechanisms_of_action) and the [Drug Repurposing Hub](https://repo-hub.broadinstitute.org/repurposing#download-data) (v. 3/24/2020). This data was processed and aligned with the JUMP data in the [Preparing MOA Label Data](./notebooks/2a_Preparing_MOA_Label_Data.ipynb) and [Aligning MOA to JUMP Data](./notebooks/2b_Aligning_MOA_to_Jump_Data.ipynb) notebooks, following the [Compound Annotator](https://github.com/jump-cellpainting/compound-annotator) GitHUb repository's example.
+2. Compound mechanism of action (MOA) information was downloaded from the [ChEMBL Drug mechanisms data portal](https://www.ebi.ac.uk/chembl/g/#browse/mechanisms_of_action) and the [Drug Repurposing Hub](https://repo-hub.broadinstitute.org/repurposing#download-data) (v. 3/24/2020). This data was processed and aligned with the JUMP data in the [Preparing MOA Label Data](./notebooks/2a_Preparing_MOA_Label_Data.ipynb) and [Aligning MOA to JUMP Data](./notebooks/2b_Aligning_MOA_to_Jump_Data.ipynb) notebooks, following the [Compound Annotator](https://github.com/jump-cellpainting/compound-annotator) GitHub repository's example.
 3. Inhibitor classes were included/excluded on the basis of their suitability (i.e., liklihood of producing a significant phenotypic response) for the U2OS cell line. The alignment of these classes with the DepMap TPM gene expression values was performed in the [U2OS Kinase Expression](./notebooks/2c_U2OS_Kinase_Expression.ipynb) notebook.
-4. The image-based profile data was then downloaded for each datapoint in cpg0016 matched with a kinase inhibitor label - see the code below:
 
-### Download CellProfiler Image-based Profile data:
-
+**4. Download CellProfiler Image-based Profile data:**
+   
+Image-based profile data was downloaded for each datapoint in cpg0016 matched with a kinase inhibitor label - see the code below:
+   
 ```.bash
-python cp_main.py --data=data/all_cpnd_pert.csv --out_path=data/ibp/all_cpnd_ibp.csv
+python ibp_dl_main.py --data=data/all_cpnd_pert.csv --out_path=data/ibp/all_cpnd_ibp.csv
 ```
-5. Following the download, quality control was performed to exclude images with high/low saturation, low focus and high levels of blur. This highlighted a number of images with artefacts that were present prior to quality control (see image below). This QC process is documented in [Quality Control and Dataset Selection](./notebooks/3a_Quality_Control_and_Dataset_Selection.ipynb). Post-QC the remaining datapoints were selected to form the kinase inhibitor dataset, choosing a maximum of ten, minimum of four replicates per compound.
+5. Following the download, quality control was performed to exclude images with high/low saturation, low focus and high levels of blur. This highlighted a number of images with artefacts that were present prior to quality control (see image below). This QC process is documented in [Quality Control and Dataset Selection](./notebooks/3a_Quality_Control_and_Dataset_Selection.ipynb). Post-QC the remaining datapoints were selected to form the kinase inhibitor [IBP dataset](./data/ibp/ki_ibp.csv), choosing a maximum of ten, minimum of four replicates per compound.
 
 <p align="center">
-<img src="https://github.com/williamdee1/Cell-Vision-Fusion/blob/main/media/low_qual.PNG" width=50% height=50% class="center">
+<img src="https://github.com/williamdee1/Cell-Vision-Fusion/blob/main/media/low_qual.PNG" width=65% height=65% class="center">
 </p>
 <p align="center">
 <em>Example low quality image excluded by quality control procedures (source_9, 20211102-Run15, GR00004394, U24, field 2)</em>
 </p>
 
 
-### Download Raw Image Cell Painting data:
+**6. Download Raw Image Cell Painting data:** 
+
+Using the [metadata](./images/ibp/ki_img_dl.csv) from the IBP dataset, the associated images were downloaded from the JUMP CP S3 Bucket using the following code:
 
 ```.bash
-python img_main.py --data=data/high_ki_moa.csv --output_dir=dl_imgs
+python img_dl_main.py --data=data/images/ki_img_dl.csv --output_dir=dl_imgs
 ```
+This function downloads all field images for each datapoint and applies the illumination function for the plate where the experiment was situated. 
+
+## Modelling the Data
+
+### Image-based Profiles
+
+Applying MAD normalization, Harmony and Spherization to the IBP data was performed by following the code in the [2023_Arevalo_BatchCorrection](https://github.com/carpenter-singh-lab/2023_Arevalo_BatchCorrection) GitHub repository, which is linked to the following research paper - [Evaluating batch correction methods for
+image-based cell profiling](https://www.biorxiv.org/content/10.1101/2023.09.15.558001v1.full.pdf). The config associated with Scenario 4 of that paper was used as it most closely mirrors the scenario found in this study (i.e. multiple microscope types, multiple laboratories, few compounds, multiple replicates). 
+
+The impact of using MAD normalization, spherization and either Pycytominer or Shapley feature selection for reducing batch effects caused by the microscope used can be observed below:
+
+<p align="center">
+<img src="https://github.com/williamdee1/Cell-Vision-Fusion/blob/main/media/spher_mad_scope.PNG" width=80% height=80% class="center">
+<img src="https://github.com/williamdee1/Cell-Vision-Fusion/blob/main/media/spher_mad_MOA.PNG" width=80% height=90% class="center">
+</p>
+
+Modelling was then performed in the [IBP RF SVM XGBoost](./notebooks/5b_IBP_RF_SVM_XGBoost.ipynb) and the [IBP MLP Kaggle](./notebooks/5a_IBP_MLP_Kaggle.ipynb) notebooks.
+
+### Raw Images
 
 
 
-## Training Time
+#### Image Model Training Time
 
 
-| Labels      | Resolution | GPUs | 1000 kimg | 25000 kimg | sec/kimg | GPU mem | CPU mem
-| :---------: | :--------: | :--: | :-------: | :--------: | :------: | :-----: | :-----:
-| Swinv2      | 896x896    | 2    | 7h 20m    | 7d 14h     | ~25      | 8.0 GB  | 5.6 GB
+| Labels      | Resolution | GPUs | sec/kimg | Max RSS | Max PSS
+| :---------: | :--------: | :--: | :------: | :-----: | :-----:
+| ENet        | 240x240    | 1    | ~8.0     | 8.0 GB  | 5.6 GB
+| SwinV2      | 896x896    | 2    | ~63.2    | 59.1 GB | 9.6 GB
+| CVF         | 896x896    | 2    | ~65.8    | 61.4 GB | 9.7 GB
 
 
+### Compound Structures
 
+The [CP Chem MOA](https://github.com/pharmbio/CP-Chem-MoA/) GitHub repository was used as the basis for converting compound smiles into Morgan Fingerprints, before using these representations of chemical structure as input into an MLP model. The process can be found in the [MLP_Structural_Model](./notebooks/7_MLP_Structural_Model.ipynb) notebook.
 
-## Deep Learning Classifier
-
-This repository contains the modules needed to replicate the deep learning classifier, trained to identify thyroid histopathology images as PTC-like or Non-PTC-like.
-
-These modules must be combined with the legacy.py module, as well as the dnnlib and torch_utils folder from the [StyleGAN2-ADA repo](https://github.com/NVlabs/stylegan2-ada-pytorch).
-
-### Training
-
+## Fusion Model
 
 
 
-### Evaluation
+## Evaluation
+
+## Results
+
+<p align="center">
+<img src="https://github.com/williamdee1/Cell-Vision-Fusion/blob/main/media/results_table.PNG" width=80% height=80% class="center">
+</p>
+
