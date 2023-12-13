@@ -14,7 +14,7 @@ NUM_CHANNELS = 5
 
 def import_data():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data', help='Dataset file containing samples', required=True)
+    parser.add_argument('--data', help='Dataset file containing sample metadata', required=True)
     parser.add_argument('--output_dir', help='Directory to save downloaded images', required=True)
     args = parser.parse_args()
     start = time.time()
