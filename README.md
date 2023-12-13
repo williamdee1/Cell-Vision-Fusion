@@ -92,7 +92,7 @@ Modelling was then performed in the [IBP RF SVM XGBoost](./notebooks/5b_IBP_RF_S
 
 ### Raw Images
 
-
+To be completed.
 
 #### Image Model Training Time
 
@@ -108,9 +108,9 @@ Modelling was then performed in the [IBP RF SVM XGBoost](./notebooks/5b_IBP_RF_S
 
 The [CP Chem MOA](https://github.com/pharmbio/CP-Chem-MoA/) GitHub repository was used as the basis for converting compound smiles into Morgan Fingerprints, before using these representations of chemical structure as input into an MLP model. The process can be found in the [MLP_Structural_Model](./notebooks/7_MLP_Structural_Model.ipynb) notebook.
 
-## Fusion Model
+## Cell-Vision Fusion Model
 
-
+To be completed.
 
 ## Evaluation
 
