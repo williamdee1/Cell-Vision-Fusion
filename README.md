@@ -116,8 +116,12 @@ To train and evaluate the Cell-Vision fusion model the following configuration c
 python train_model.py --config=config/fusion.yml
 ```
 
+## Evaluation
+The results from each cross validation fold for the best performing models for each data modality - images (SwinV2), image-based profiles (MLP), compound structure (MLP), as well as the CVF results are shared in the [Results folder](./results/).
 
-## Results
+These results are combined and performance metrics for each model are calculated in the [Model Results](./notebooks/7_Model_Results.ipynb) notebook. These are displayed in the table below:
+
+### Results
 
 <p align="center">
 <img src="https://github.com/williamdee1/Cell-Vision-Fusion/blob/main/media/results_table.PNG" width=80% height=80% class="center">
