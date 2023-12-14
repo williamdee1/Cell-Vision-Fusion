@@ -67,7 +67,7 @@ python ibp_dl_main.py --data=data/all_cpnd_pert.csv --out_path=data/ibp/all_cpnd
 
 **6. Download Raw Image Cell Painting data:** 
 
-Using the [metadata](./images/ibp/ki_img_dl.csv) from the IBP dataset, the associated images were downloaded from the JUMP CP S3 Bucket using the following code:
+Using the [metadata](./data/images/ki_img_dl.csv) from the IBP dataset, the associated images were downloaded from the JUMP CP S3 Bucket using the following code:
 
 ```.bash
 python img_dl_main.py --data=data/images/ki_img_dl.csv --output_dir=dl_imgs
