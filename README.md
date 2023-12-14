@@ -124,6 +124,6 @@ These results are combined and performance metrics for each model are calculated
 ### Results
 
 <p align="center">
-<img src="https://github.com/williamdee1/Cell-Vision-Fusion/blob/main/media/results_table.PNG" width=70% height=70% class="center">
+<img src="https://github.com/williamdee1/Cell-Vision-Fusion/blob/main/media/results_table.PNG" width=80% height=80% class="center">
 </p>
 
