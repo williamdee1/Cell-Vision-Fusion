@@ -106,13 +106,16 @@ To be completed.
 
 ### Compound Structures
 
-The [CP Chem MOA](https://github.com/pharmbio/CP-Chem-MoA/) GitHub repository was used as the basis for converting compound smiles into Morgan Fingerprints, before using these representations of chemical structure as input into an MLP model. The process can be found in the [MLP_Structural_Model](./notebooks/7_MLP_Structural_Model.ipynb) notebook.
+The [CP Chem MOA](https://github.com/pharmbio/CP-Chem-MoA/) GitHub repository was used as the basis for converting compound smiles into Morgan Fingerprints, before using these representations of chemical structure as input into an MLP model. The process can be found in the [MLP_Structural_Model](./notebooks/6_ChemStructure_MLP_XGB.ipynb) notebook.
 
 ## Cell-Vision Fusion Model
 
-To be completed.
+To train and evaluate the Cell-Vision fusion model the following configuration can be run after this repository and the associated image, compound structure and image-based profile data (see above) is downloaded/ preprocessed.
 
-## Evaluation
+```.bash
+python train_model.py --config=config/fusion.yml
+```
+
 
 ## Results
 
