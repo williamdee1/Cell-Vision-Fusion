@@ -1,9 +1,9 @@
 data_loc: data/ibp/ki_ibp.csv 
-cv_loc: data/cv_splits/ 
-norm_loc: data/norm/FULL_plt_mean_std.json 
-img_loc: ../../../DERI-DEE-JumpCP/KI_MOA/ # Replace with the appropriate path
-fs_loc: data/shap_fs_res.csv
-run_id: fusion_model_BRParams # Replace with a unique run ID
+cv_loc: # Path to cv split data
+norm_loc: # Path to normalization data
+img_loc: # Replace with the appropriate path
+fs_loc: # Replace with Shapley feature selection data
+run_id: # Replace with a unique run ID
 cv_fold: 1
 cv_folds: 5 
 n_features: 150
@@ -11,7 +11,7 @@ n_classes: 10
 mdl_weights_loc: null  # Replace if loading saved model weights
 model_type: fusion
 batch_size: 8 # Replace with the desired batch size
-n_epochs: 100  # Replace with the desired number of epochs
+n_epochs: 35  # Replace with the desired number of epochs
 lr: 5.0e-6
 drop_out: 0.1
 sched_type: cosine
@@ -43,7 +43,7 @@ ctrl_type: POSCON
 std_type: med_mad
 stnd: True
 norm: True
-tab_norm: mads_shap
+tab_norm: minmax
 clip: False
 aug: True
 aug_type: channel
