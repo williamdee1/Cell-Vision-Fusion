@@ -23,7 +23,7 @@ bioRxiv pre-print: To complete
 
 ## Requirements
 * 1&ndash;2 GPUs with at least 12 GB of memory.
-* 64-bit Python 3.7 and PyTorch 1.8.1. See [https://pytorch.org/](https://pytorch.org/) for PyTorch install instructions.
+* 64-bit Python 3.10 and PyTorch 1.8.1. See [https://pytorch.org/](https://pytorch.org/) for PyTorch install instructions.
 * CUDA toolkit 11.0 or later. 
 * Python libraries: see [reqs.txt](reqs.txt) for necessary libraries.
 
