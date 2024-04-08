@@ -5,10 +5,6 @@
 # Written by Ze Liu
 # Adapted from Source: https://github.com/microsoft/Swin-Transformer/blob/main/lr_scheduler.py
 # --------------------------------------------------------
-
-import bisect
-
-import torch
 from timm.scheduler.cosine_lr import CosineLRScheduler
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 

@@ -182,7 +182,7 @@ def data_mean_std(img_paths, y_data):
 
     :param img_paths: Paths to numpy arrays of images.
     :param y_data: The class labels associated with the paths.
-    :return: The mean and standard devaition of the whole image dataset.
+    :return: The mean and standard deviation of the whole image dataset.
     """
     # Instantiate a dataset class and dataloader for the image dataset:
     dataset = CwpDataset(img_paths, y_data)
