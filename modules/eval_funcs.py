@@ -1,3 +1,7 @@
+# This work is made available under the Creative Commons Corporation CC BY 4.0 Legal Code.
+# To view a copy of this license, visit
+# https://github.com/williamdee1/Cell-Vision-Fusion/LICENSE.txt
+
 import torch.nn.functional as F
 from sklearn.metrics import accuracy_score, f1_score, roc_auc_score, precision_score, recall_score, average_precision_score
 import torch

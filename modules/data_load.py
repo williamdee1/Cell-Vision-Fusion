@@ -1,3 +1,7 @@
+# This work is made available under the Creative Commons Corporation CC BY 4.0 Legal Code.
+# To view a copy of this license, visit
+# https://github.com/williamdee1/Cell-Vision-Fusion/LICENSE.txt
+
 import logging
 import pickle
 import numpy as np

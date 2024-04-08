@@ -1,7 +1,9 @@
+# MOAB Method source: https://github.com/omniaalwazzan/MOAB/blob/main/moab_fusion_model.py
+
 import torch
 import torch.nn as nn
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-# MOAB Method source: https://github.com/omniaalwazzan/MOAB/blob/main/moab_fusion_model.py
+
 
 
 class ConvStack(nn.Module):

@@ -1,7 +1,6 @@
-'''
-Functions to apply normalization methods
-Source: https://github.com/carpenter-singh-lab/2023_Arevalo_BatchCorrection/blob/main/normalization.py
-'''
+# Functions to apply normalization methods
+# Source: https://github.com/carpenter-singh-lab/2023_Arevalo_BatchCorrection/blob/main/normalization.py
+
 import pandas as pd
 from sklearn.base import TransformerMixin
 from modules.cleaning import find_meta_cols, find_feat_cols
