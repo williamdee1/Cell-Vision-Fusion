@@ -15,14 +15,15 @@
 
 </div>
 
-<div align="left">
-  
 ## Approach Overview
+
+<div align="center">
 
 <img src="https://github.com/williamdee1/Cell-Vision-Fusion/blob/main/media/fusion_overview.PNG" width=75% height=75% class="center">
 </p>
   
-
+<div align="left">
+  
 ## Primary Reference Material and Data Sources
 
 | Path | Description
@@ -37,6 +38,8 @@
 * 64-bit Python 3.10 and PyTorch 1.8.1. See [https://pytorch.org/](https://pytorch.org/) for PyTorch install instructions.
 * CUDA toolkit 11.0 or later. 
 * Python libraries: see [reqs.txt](reqs.txt) for necessary libraries.
+
+*Note: To use later versions of Pytorch with Python 3.10.x, the following [code changes](https://discuss.pytorch.org/t/issues-on-using-nn-dataparallel-with-python-3-10-and-pytorch-1-11/146745/16) will have to be made to the Cuda package to avoid dependency conflicts.*
 
 ## Getting Started
 ```bash
