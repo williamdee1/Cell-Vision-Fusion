@@ -104,10 +104,6 @@ The impact of using MAD normalization, spherization and either Pycytominer or Sh
 
 Modelling was then performed in the [IBP RF SVM XGBoost](./notebooks/5b_IBP_RF_SVM_XGBoost.ipynb) and the [IBP MLP Kaggle](./notebooks/5a_IBP_MLP_Kaggle.ipynb) notebooks.
 
-### Raw Images
-
-To be completed.
-
 #### Image Model Training Time
 
 
