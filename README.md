@@ -5,7 +5,7 @@
 <div align="center">
 
 <a href="https://pytorch.org/get-started/locally/"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white"></a>
-[![Paper](https://img.shields.io/badge/paper-biorxiv.2023.12.13.571534v1-blue.svg)](https://www.biorxiv.org/content/10.1101/2023.12.13.571534v1)
+[![Paper](https://img.shields.io/badge/Cell%20iScience-blue)](https://www.cell.com/action/showPdf?pii=S2589-0042%2824%2901736-X)
 
 <div align="left">
   
